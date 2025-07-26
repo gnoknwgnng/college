@@ -92,6 +92,8 @@ if st.button("Generate Email Content with AI"):
             full_prompt = "Please provide an email subject and body based on the following: " + ai_prompt + "\n\nFormat your response as: \nSubject: [Your Subject]\n\nBody: [Your Body Content]"
             ai_response_raw = get_ai_response(full_prompt)
             
+            st.write(f"DEBUG: AI Raw Response: {ai_response_raw}") # DEBUG
+
             # Parse the AI's response
             subject_line = ""
             body_content = ""
@@ -117,6 +119,9 @@ if st.button("Generate Email Content with AI"):
             else:
                 st.warning("AI response did not contain clear 'Subject:' and 'Body:' labels. Using raw response as body.")
                 body_content = ai_response_raw # Fallback to show raw AI response
+
+            st.write(f"DEBUG: Parsed Subject: {subject_line}") # DEBUG
+            st.write(f"DEBUG: Parsed Body: {body_content}") # DEBUG
 
             # Update Streamlit state for both fields
             st.session_state['generated_email_subject'] = subject_line
