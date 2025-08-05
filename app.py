@@ -9,7 +9,7 @@ from groq import Groq # Import Groq library
 
 # --- Groq API Configuration ---
 # IMPORTANT: For production, use Streamlit Secrets or environment variables for API keys.
-GROQ_API_KEY = "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" # <<< Your Groq API Key
+GROQ_API_KEY = "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" # <<< Your Groq API Key
 GROQ_MODEL_NAME = "llama-3.1-8b-instant"
 
 client = Groq(api_key=GROQ_API_KEY)
